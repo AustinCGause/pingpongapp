@@ -65,12 +65,17 @@ article {
 }
 
 .player-scores {
-    font-size: 3rem;
     flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.player-scores > h1 {
+    font-size: 7rem;
 }
 
 .set-wins {
-    flex: 1;
+    flex: .5;
 }
 
 .set-wins > h3 {
@@ -79,4 +84,8 @@ article {
 
 .empty {
     flex: 2;
+}
+
+@media only screen and (max-width: 600px) {
+    
 }

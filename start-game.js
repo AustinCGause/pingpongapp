@@ -1,5 +1,6 @@
-const leftButton = document.getElementById("left")
-const rightButton = document.getElementById("right")
+const screen = document.getElementById("content");
+const leftButton = document.getElementById("left");
+const rightButton = document.getElementById("right");
 const startGame = document.getElementById("start-game");
 const player1Name = document.getElementById("player1");
 const player2Name = document.getElementById("player2");
@@ -13,6 +14,8 @@ let leftScore = 0;
 let rightScore = 0;
 let leftSetWins = 0;
 let RightSetWins = 0;
+let serveCount = 0;
+let currentServer = "left";
 
 score1.style.display = "none";
 score2.style.display = "none";
@@ -27,12 +30,34 @@ startGame.onclick = function(){
     score2.style.display = "";
     setWinsLeft.style.display = "";
     setWinsRight.style.display = "";
+    leftButton.style.border = "1rem solid white";
     start = true;
+}
+
+screen.onclick = function(){
+    if (start == true){
+        if (serveCount > 3){
+            serveCount = 0;
+            currentServer = "left";
+        } else if (serveCount < 2){
+            currentServer = "left";
+        } else if (serveCount >= 2){
+            currentServer = "right";
+        }
+        if (currentServer == "left"){
+            leftButton.style.border = "1rem solid white";
+            rightButton.style.border = "";
+        } else if (currentServer == "right"){
+            rightButton.style.border = "1rem solid white";
+            leftButton.style.border = "";
+        }
+    }
 }
 
 leftButton.onclick = function(){
     if (start == true) {
         score1.innerHTML = ++leftScore;
+        serveCount = ++serveCount;
     }
     if (leftScore == 12){
         score1.innerHTML = 0;
@@ -45,7 +70,8 @@ leftButton.onclick = function(){
 
 rightButton.onclick = function(){
     if (start == true) {
-     score2.innerHTML = ++rightScore;   
+        score2.innerHTML = ++rightScore;
+        serveCount = ++serveCount;
     }
     if (rightScore == 12){
         score1.innerHTML = 0;
