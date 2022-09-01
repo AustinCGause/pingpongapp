@@ -1,0 +1,82 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.site-name {
+    background-color: #7558A4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.site-name > h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+article {
+    height: 90vh;
+    display: flex;
+}
+
+.players {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#left { 
+    background-color: #F7211995;
+}
+
+#right {
+    background-color: #4D4DFF95;
+}
+
+#start-game {
+    background-color: #39FF14;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 30%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 2rem;
+}
+
+#start-game > h2 {
+    font-size: 4rem;
+}
+
+.player-names {
+    flex: 2;
+    padding-top: 2rem;
+}
+
+.player-names > h2 {
+    font-size: 2rem;
+}
+
+.player-scores {
+    font-size: 3rem;
+    flex: 1;
+}
+
+.set-wins {
+    flex: 1;
+}
+
+.set-wins > h3 {
+    font-size: 2rem;
+}
+
+.empty {
+    flex: 2;
+}
