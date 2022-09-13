@@ -13,21 +13,39 @@
             <h1>Ping Pong ScoreBoard</h1>
         </div>
     </header>
-    <article id="content">
-        <button type="button" id="start-game"><h2>Start Game</h2></button>
-        <button id="players-wrapper" type="button">
-            <button type="button" class="players" id="left">
-                <div class="player-names"><h2 id="player1"></h2></div>
-                <div class="player-scores"><h1 id="score1">0</h1></div>
-                <div class="set-wins"><h3 id="set-wins-left">0</h3></div>
-                <div class="empty"></div>
-            </button>
-            <button type="button" class="players" id="right">
-                <div class="player-names"><h2 id="player2"></h2></div>
-                <div class="player-scores"><h1 id="score2">0</h1></div>
-                <div class="set-wins"><h3 id="set-wins-right">0</h3></div>
-                <div class="empty"></div>
-            </button>
+    <article id="page-content">
+        <button type="button" id="start-game-btn"><h2>Start Game</h2></button>
+        <div id="modal-wrapper" class="modal-wrapper">
+            <div id="modal-content-box" class="modal-content-box">
+                <span id="modal-heading" class="modal-heading">
+                    <h1 class="modal-headers" id="main-modal-header">Pre-Game Information</h1>
+                </span>
+                <h1 class="modal-headers">Enter Player Names</h1>
+                <span id="name-input-wrapper">
+                    <input type="text" placeholder="Player1" name="player1-name-input" id="player1-name-input" class="name-inputs">
+                    <input type="text" placeholder="Player2" name="player2-name-input" id="player2-name-input" class="name-inputs">
+                </span>
+                <h1 class="modal-headers">Who Will Serve First?</h1>
+                <div id="server-selection-wrapper">
+                    <button type="button" id="player1-serve-selection" class="select-btn">Player 1</button>
+                    <button type="button" id="player2-server-selection" class="select-btn">Player 2</button>
+                </div>
+                <div class="submition-wrapper">
+                    <button type="submit" id="modal-submit" class="modal-submit">Submit</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="players" id="left">
+            <div class="player-names"><h2 id="player1-name-displayed"></h2></div>
+            <div class="player-scores"><h1 id="score1">0</h1></div>
+            <div class="set-wins"><h3 id="set-wins-left">0</h3></div>
+            <div class="empty"></div>
+        </button>
+        <button type="button" class="players" id="right">
+            <div class="player-names"><h2 id="player2-name-displayed"></h2></div>
+            <div class="player-scores"><h1 id="score2">0</h1></div>
+            <div class="set-wins"><h3 id="set-wins-right">0</h3></div>
+            <div class="empty"></div>
         </button>
     </article>
     <script src="start-game.js"></script>
